@@ -1,0 +1,72 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageNavigation %}
+  
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+        {{ govukBreadcrumbs({
+        collapseOnMobile: true,
+        items: [
+            {
+            text: "Hub home",
+            href: "/hubHome"
+            },
+            {
+              text: "Events",
+              href: "/events"
+            },
+            {
+              text: "Events Notifications",
+              href: "/event-notifications"
+            },
+            {
+              text: "Confirmation",
+              href: "/success-manage-event"
+            }
+           
+            ]
+        }) }}
+  {% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Manage your events
+  </h1>
+
+  {% set confirmationText %}
+    Confirmation. You have successfully signed up to event {{ selectedEvent.eventTitle }}
+  {% endset %}
+
+  {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+        {{ govukPanel({
+             titleText: confirmationText,
+            html: "Your reference number<br><strong>HDJ2123F</strong>"
+         }) 
+    }}
+
+
+    <div class="calendar">
+      <img class="small-margin-bottom"
+      src="/public/images/calendar-icon.jpg" alt="calendar" width="70%">
+   </div>
+
+
+    <p class="govuk-body-m">If you can no longer attend an event, you 
+        can cancel the event in your calendar.</p>
+
+    <p class="govuk-body-m">For more information about one of your
+        events, select the event link to be taken 
+        to that event’s page.</p>
+
+    <h4 class="govuk-body-l">Feedback on an event you attended</h4>
+    
+    <p class="govuk-body-m">You currently have no events that require 
+    feedback</p>
+
+{% endblock %}

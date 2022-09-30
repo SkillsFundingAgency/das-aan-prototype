@@ -1,0 +1,74 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block pageNavigation %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+        {{ govukBreadcrumbs({
+        collapseOnMobile: true,
+        items: [
+            {
+            text: "Hub home",
+            href: "/hubHome"
+            },
+            {
+              text: "Events",
+              href: "/events"
+            },
+            {
+              text: "Manage Events",
+              href: "/manage-event"
+            }
+            ]
+        }) }}
+  {% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+   Manage your Events
+  </h1>
+ 
+  <div class="calendar" id="cal">
+    <img class="small-margin-bottom"
+    src="/public/images/calendar-icon2.jpeg" alt="calendar" width="60%">
+  </div>
+
+  <p class="govuk-body-l">
+    If you can no longer attend an event, click on the event in the calendar to cancel.
+  </p>
+  <p class="govuk-body-l">
+    For more information about one of your events, select the event link to be taken to that event’s page.
+  </p>
+
+
+  <h4 class="govuk-body-m
+             govuk-!-font-weight-bold
+             underline">
+             Feedback on an event you attended</h4>
+
+  {% for item in feedbackForms %}
+    {% include "manageEventCard.html" %}
+  {% endfor %}
+
+  <script>
+   
+    let calendar = document.querySelector('#cal')
+  
+    calendar.addEventListener('click', () => {
+      // if(select.value = 'choose-region'){
+      //   window.location = `/event-search`
+      // }
+      // else {
+     window.location = `/remove-event`
+      // }
+    })
+
+  
+  </script>
+
+
+ {% endblock %}
