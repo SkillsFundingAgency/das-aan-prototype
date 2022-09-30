@@ -50,7 +50,7 @@
 
   
   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+ 
 
   {{ govukSummaryList({
   rows: [
@@ -75,7 +75,7 @@
                 html: '<div class="govuk-checkboxes__item">
                            <input class="govuk-checkboxes__input" id="approved" name="approved" type="checkbox" value="name" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="approved">
-                             <span class="govuk-visually-hidden">Name</span>
+                             <span class="govuk-visually-hidden">Email</span>
                       </label>
                       </div>'
               }
@@ -95,7 +95,27 @@
                 html: '<div class="govuk-checkboxes__item">
                            <input class="govuk-checkboxes__input" id="approved" name="approved" type="checkbox" value="name" checked>
                             <label class="govuk-label govuk-checkboxes__label" for="approved">
-                             <span class="govuk-visually-hidden">Name</span>
+                             <span class="govuk-visually-hidden">town or city</span>
+                      </label>
+                      </div>'
+              }
+            ]   
+        }
+      },
+      {
+      key: {
+          text: "Region:"
+      },
+      value: {
+          html: "West Midlands"
+      },
+      actions: {
+            items: [ 
+              {
+                html: '<div class="govuk-checkboxes__item">
+                           <input class="govuk-checkboxes__input" id="approved" name="approved" type="checkbox" value="name" checked>
+                            <label class="govuk-label govuk-checkboxes__label" for="approved">
+                             <span class="govuk-visually-hidden">Region</span>
                       </label>
                       </div>'
               }
@@ -181,3 +201,4 @@
   {% endfor %}
 
 {% endblock %}
+

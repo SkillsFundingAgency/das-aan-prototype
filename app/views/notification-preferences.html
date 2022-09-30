@@ -240,11 +240,38 @@ items: [
             })
             }}
 
+            <h3 class="govuk-heading-m hyperlink base-margin">
+              I prefer the AAN to contact me:
+            </h3>
+
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              name: "frequency",
+              formGroup: {
+                  classes: "flex"
+              },
+              items: [
+                  {
+                  value: "daily",
+                  text: "Daily"
+                  },
+                  {
+                  value: "weekly",
+                  text: "Weekly"
+                  },
+                  {
+                      value: "monthly",
+                      text: "Monthly"
+                      }
+              ]
+              })
+              }}
+  
   {% from "govuk/components/button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Submit",
-        href: "/confirmation"
+        href: "/"
       }) 
   }}
 
