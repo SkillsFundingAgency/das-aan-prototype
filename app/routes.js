@@ -7,11 +7,18 @@ const router = express.Router()
 
 //EVENT NOTIFICATIONS --> 
 
+
 const events = [
     {
         eventTitle: "Manchester AAN regional meet-up",
+        type: "In person",
+        date: "Thursday 27th October 2022",
         eventDetail: "Join AAN colleagues across your region toupdate on recent activity, share insight and celebrate achievements.",
         eventLocation: "north-west",
+        eventBuilding: "Manchester Town Hall, Albert square, M2 5DB",
+        start: "19:00",
+        end: "21:00",
+        contact: "rebecca.morrell@aan.com",
         industry: "care-services",
         eventId: 1
     },
@@ -56,6 +63,13 @@ const events = [
         eventLocation: "north-west",
         industry: "creative-and-design",
         eventId: 7
+    }, 
+    {
+        eventTitle: "Newcastle hybrid event",
+        eventDetail: "an online monthly catch up ",
+        eventLocation: "north-east",
+        industry: "creative-and-design",
+        eventId: 8
     }, 
 ]
 
