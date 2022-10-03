@@ -88,7 +88,7 @@
 
         {{ govukInput({
             label: {
-                 text: "Current line manager email:"
+                 text: "Current line manager email"
                 },
             id: "line-manager-email",
             name: "line-manager-email",
@@ -111,14 +111,19 @@
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 
-        {{ govukRadios({
-          idPrefix: "network-preferences",
+      
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
           name: "network-preferences",
           classes: "base-margin-bottom",
           fieldset: {
             legend: {
-              text: "Please select your preferences in supporting the network:"
+              text: "Please select your preferences in supporting the network"
             }
+          },
+          hint: {
+            text: "Select all that apply."
           },
           items: [
             {
@@ -132,15 +137,24 @@
             {
               value: "Hybrid",
               text: "Hybrid Events"
+            },
+            {
+              value: "Case Studies",
+              text: "Case Studies"
+            },
+             {
+              value: "resources and templates",
+              text: "Resources and templates"
             }
           ]
+         
         }) }}
 
 
              {% from "govuk/components/button/macro.njk" import govukButton %}
 
            {{ govukButton({
-               text: "Submit"
+               text: "Next"
            })
          }}
     

@@ -46,6 +46,16 @@
 })
  }}
 
+ {{ govukSelect({
+  id: "filter-industry",
+ name: "filter-industry",
+  label: {
+         text: "Sector"
+ },
+  items: selectedIndustry
+ })
+}}
+
 
 
   <h4 class="govuk-body-s govuk-!-font-weight-bold">
@@ -60,18 +70,18 @@
 
   <script>
    
-    let select = document.querySelector('#filter-region')
-  
-    select.addEventListener('change', () => {
-      // if(select.value = 'choose-region'){
-      //   window.location = `/event-search`
-      // }
-      // else {
-     window.location = `/event-search?f=${select.value}`
-      // }
+   let selects = document.querySelectorAll('.govuk-select')
+    let selectR = document.querySelector('#filter-region')
+    let selectI = document.querySelector('#filter-industry')
+
+    selects.forEach(select => {
+      console.log('foreach')
+       addEventListener('change', () => {
+         console.log("event listener", select.value)
+         window.location = `/event-search?r=${selectR.value}&i=${selectI.value}`
+      })
     })
 
-  
   </script>
 
 {% endblock %}

@@ -12,37 +12,50 @@ const events = [
         eventTitle: "Manchester AAN regional meet-up",
         eventDetail: "Join AAN colleagues across your region toupdate on recent activity, share insight and celebrate achievements.",
         eventLocation: "north-west",
+        industry: "care-services",
         eventId: 1
     },
     {
         eventTitle: "Bristol High School apprenticehship event",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
         eventLocation: "south-west",
+        industry: "creative-and-design",
         eventId: 2
     },
     {
         eventTitle: "Online case study session",
         eventDetail: "Share your own case studies with colleagues across the region.",
         eventLocation: "north-east",
+        industry: "construction",
         eventId: 3
     }, 
     {
         eventTitle: "Event 4",
         eventDetail: "West Midlands meetup",
         eventLocation: "west-midlands",
+        industry: "business-and-administration",
         eventId: 4
     },
     {
         eventTitle: "Event 5",
         eventDetail: "Bristol schools event",
         eventLocation: "south-west",
+        industry: "care-services",
         eventId: 5
     }, 
     {
         eventTitle: "London online event",
         eventDetail: "an online monthly catch up ",
         eventLocation: "london",
+        industry: "business-and-administration",
         eventId: 6
+    }, 
+    {
+        eventTitle: "Manchester hybrid event",
+        eventDetail: "an online monthly catch up ",
+        eventLocation: "north-west",
+        industry: "creative-and-design",
+        eventId: 7
     }, 
 ]
 
@@ -135,8 +148,8 @@ let regions = [
 
 let industries = [
     {
-        value: "choose-region",
-        text: "Choose a Region",
+        value: "choose-industry",
+        text: "Choose a sector",
         selected: false
       },
       {
@@ -428,19 +441,6 @@ router.get('/aanApplication', (req, res) => {
     res.render('aanApplication',  {regions} )
 })
 
-//check-answers-application
-
-// router.get('/check-answers', (req, res) => {
-
-//     var dateBirth = req.session.data['date-of-birth']
-//     console.log("initial data", dateBirth)
-
-//     dateBirth.forEach(date => {
-//         console.log(date)
-//     })
-
-//     res.render('check-answers', {dateBirth})
-// })
 
 // event notifications page - to display list of cards
 
@@ -482,28 +482,46 @@ router.get('/success-manage-event', function (req, res) {
 // filter with query string 
 
 router.get('/event-search', (req, res) => {
-    let filter = req.query.f
+    let filterR = req.query.r
+    let filterI = req.query.i
 
-    let filteredEvents = null
+    let filteredEvents = [...events]
 
-    if (filter == undefined || filter == 'choose-region'){
+    if ((filterR == undefined || filterR == 'choose-region') && (filterI == undefined || filterI == 'choose-industry')){
        filteredEvents = [...events]
     }
     else {
-        filteredEvents = events.filter(event => {
-            return event.eventLocation === filter
-        })
+        if(filterR && filterR !== 'choose-region') {
+            filteredEvents = filteredEvents.filter(event => {
+                return event.eventLocation === filterR
+            })
+        }
+        if(filterI && filterI !== 'choose-industry'){
+            filteredEvents = filteredEvents.filter(event => {
+                console.log(filteredEvents)
+                return event.industry == filterI
+            })
+        }
     }
 
     let selectedRegions = regions.map(region => {
-       if(region.value === filter){
+       if(region.value === filterR){
         return {...region, selected: true}
        }
        else {
            return region
        }
     })
-    res.render('event-search', { events, filter, selectedRegions, filteredEvents })
+    let selectedIndustry = industries.map(industry => {
+        if(industry.value === filterI){
+         return {...industry, selected: true}
+        }
+        else {
+            return industry
+        }
+     })
+
+    res.render('event-search', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry })
     
 }),
 
