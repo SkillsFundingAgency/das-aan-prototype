@@ -106,7 +106,7 @@ const feedbackForms = [
         eventTitle: "Irlam High School apprenticeship event feedback form",
         description: "You attended the Irlam High School apprenticeship event on 27 September 2022. Use the event feedback form link to provide feedback and add this event to your network stats table.",
         location: "Irlam High School",
-        date: "Tuesday 13st September",
+        date: "Tuesday 13 September",
         feedbackId: 2
     }
 ]
