@@ -8598,6 +8598,10 @@ ol {
   padding-left: 40px;
 }
 
+.indent-m {
+  padding-left: 60px;
+}
+
 .indent-s {
   padding-left: 20px;
 }

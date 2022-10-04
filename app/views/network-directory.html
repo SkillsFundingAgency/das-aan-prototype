@@ -59,20 +59,6 @@
         })
     }}
 
-    {% from "govuk/components/select/macro.njk" import govukSelect %}
-
-    {{ govukSelect({
-         id: "filter-apprentice-type",
-        name: "filter-apprentice-type",
-         label: {
-                text: "Current or Former Apprentice"
-        },
-         items: selectedApprentice
-        })
-    }}
-
-
-
 
 
     {% from "govuk/components/table/macro.njk" import govukTable %}
@@ -94,7 +80,7 @@
       classes: 'app-custom-class'
     },
     {
-      text: "Engagement (# events)",
+      text: "Your AAN Activity",
       classes: 'app-custom-class'
     },
     {
@@ -111,7 +97,6 @@
     let selects = document.querySelectorAll('.govuk-select')
     let selectR = document.querySelector('#filter-region')
     let selectI = document.querySelector('#filter-industry')
-    let selectA = document.querySelector('#filter-apprentice-type')
 
     console.log("select", selects )
 
@@ -120,10 +105,10 @@
       console.log('foreach')
        addEventListener('change', () => {
          console.log("event listener")
-         window.location = `/network-directory?r=${selectR.value}&i=${selectI.value}&a=${selectA.value}`
+         window.location = `/network-directory?r=${selectR.value}&i=${selectI.value}`
       })
     })  
   
   </script>
 
-{% endblock %}
+{% endblock %} 

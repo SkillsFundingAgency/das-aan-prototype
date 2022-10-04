@@ -7,25 +7,49 @@ const router = express.Router()
 
 //EVENT NOTIFICATIONS --> 
 
+
 const events = [
     {
         eventTitle: "Manchester AAN regional meet-up",
+        type: "In person",
+        date: "Thursday 27th October 2022",
         eventDetail: "Join AAN colleagues across your region toupdate on recent activity, share insight and celebrate achievements.",
         eventLocation: "north-west",
+        eventBuilding: "Manchester Town Hall, Albert square, M2 5DB",
+        start: "19:00",
+        end: "21:00",
+        contact: "rebecca.morrell@aan.com",
         industry: "care-services",
         eventId: 1
     },
     {
-        eventTitle: "Bristol High School apprenticehship event",
+        eventTitle: "Clifton High School apprenticeship event",
+        type: "Hybrid",
+        date: "Monday 31st October 2022",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
+        summary1: "An opportunity to champion apprenticeships and talk to students at Clifton High School about your own journey as an apprentice.", 
+        summary2: "Share the biggest challenges you have faced, your success stories and inspire those who are considering an apprenticeship as the next step in their career.",
         eventLocation: "south-west",
+        eventBuilding: "Clifton High School, College Road, Clifton, Bristol, BS8 3JD",
+        start: "17:00",
+        end: "19:30",
+        contact: "rebecca.morrell@aan.com",
         industry: "creative-and-design",
         eventId: 2
     },
     {
-        eventTitle: "Online case study session",
+        eventTitle: "AAN Online Case Study Session",
+        type: "Online",
+        date: "Tuesday 1st November 2022",
         eventDetail: "Share your own case studies with colleagues across the region.",
+        summary1: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network.", 
+        summary2: "For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.",
+        summary3: "*please note: this session will be recorded for those who are unable to attend.", 
         eventLocation: "north-east",
+        eventBuilding: "Join event online via Zoom or Teams",
+        start: "13:00",
+        end: "14:30",
+        contact: "sam.kershaw@aan.com",
         industry: "construction",
         eventId: 3
     }, 
@@ -56,6 +80,13 @@ const events = [
         eventLocation: "north-west",
         industry: "creative-and-design",
         eventId: 7
+    }, 
+    {
+        eventTitle: "Newcastle hybrid event",
+        eventDetail: "an online monthly catch up ",
+        eventLocation: "north-east",
+        industry: "creative-and-design",
+        eventId: 8
     }, 
 ]
 
