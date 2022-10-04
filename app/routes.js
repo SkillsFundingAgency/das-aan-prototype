@@ -40,7 +40,7 @@ const events = [
         type: "Online",
         date: "Tuesday 1st November 2022",
         eventDetail: "Share your own case studies with colleagues across the region.",
-        eventSummary: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network. For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.  *please note: this session will be recorded for those who are unable to attend.", 
+        summary: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network. For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda. *please note: this session will be recorded for those who are unable to attend.", 
         eventLocation: "north-east",
         eventBuilding: "Join event online via Zoom or Teams",
         start: "13:00",
