@@ -23,16 +23,29 @@ const events = [
         eventId: 1
     },
     {
-        eventTitle: "Bristol High School apprenticehship event",
+        eventTitle: "Clifton High School apprenticeship event",
+        type: "Hybrid",
+        date: "Monday 31st October 2022",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
         eventLocation: "south-west",
+        eventBuilding: "Clifton High School, College Road, Clifton, Bristol, BS8 3JD",
+        start: "17:00",
+        end: "19:30",
+        contact: "rebecca.morrell@aan.com",
         industry: "creative-and-design",
         eventId: 2
     },
     {
-        eventTitle: "Online case study session",
+        eventTitle: "AAN Online Case Study Session",
+        type: "Online",
+        date: "Tuesday 1st November 2022",
         eventDetail: "Share your own case studies with colleagues across the region.",
+        eventSummary: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network. For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.  *please note: this session will be recorded for those who are unable to attend.", 
         eventLocation: "north-east",
+        eventBuilding: "Join event online via Zoom or Teams",
+        start: "13:00",
+        end: "14:30",
+        contact: "sam.kershaw@aan.com",
         industry: "construction",
         eventId: 3
     }, 
