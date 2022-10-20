@@ -26,4 +26,4 @@ GDS components used:
 
 | Custom component          |      View        | Description       |
 | ------------------------- | ---------------- | ------------------|
-| Card Component            |  <img src="https://user-images.githubusercontent.com/77584099/196912457-16b357ef-49dc-47a1-af5d-27007033b631.png" width="2000px"/> | - Information card with hyperlink title to link to new page |
+| Card Component            |  <img src="https://user-images.githubusercontent.com/77584099/196912457-16b357ef-49dc-47a1-af5d-27007033b631.png" width="200px"/> | - Information card with hyperlink title <br> -Easy to loop through to list cards for several pages  |
