@@ -27,4 +27,5 @@ GDS components used:
 | Custom component          |      View        | Description       |
 | ------------------------- | ---------------- | ------------------|
 | Card Component            | <img
-                                src="/>
+                                src="/public/images/content-card"
+                                width="80px">
