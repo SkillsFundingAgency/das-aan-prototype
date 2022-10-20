@@ -17,11 +17,11 @@ This prototype contains the following flows:
 ## Components in this prototype:
 
 GDS components used: 
-    - Breadcrumbs
-    - Summary list 
-    - Panel 
-    - Radios 
-    - Check answers (pattern)
+    * Breadcrumbs <br>
+    * Summary list <br>
+    * Panel <br>
+    * Radios <br>
+    * Check answers (pattern) <br>
 
 
 | Custom component          |      View        | Description       |
