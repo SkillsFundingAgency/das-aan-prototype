@@ -27,7 +27,5 @@ GDS components used:
 | Custom component          |      View        | Description       |
 | ------------------------- | ---------------- | ------------------|
 | Card Component            |  <img src="https://user-images.githubusercontent.com/77584099/196912457-16b357ef-49dc-47a1-af5d-27007033b631.png" width="400px"/> | - Information card with hyperlink title <br> -Easy to loop through to list cards for several pages  |
- Card Component            |  <img width="350px" src="https://user-images.githubusercontent.com/77584099/196920055-e2c7c6f3-1894-43f1-92b2-3aed42cd9d5f.png"> <br> <img width="350px" alt="Screenshot 2022-10-20 at 10 39 25" src="https://user-images.githubusercontent.com/77584099/196920082-e2b543f2-2aeb-45d0-bce2-f1afabdf5693.png">
-
-  | - Information card with hyperlink title to link to new page |
+| Filter (using GDS select)  |  <img width="300px" src="https://user-images.githubusercontent.com/77584099/196920055-e2c7c6f3-1894-43f1-92b2-3aed42cd9d5f.png"> <br> <img width="300px" src="https://user-images.githubusercontent.com/77584099/196920082-e2b543f2-2aeb-45d0-bce2-f1afabdf5693.png"> | - GDS select used <br> - Auto redirected window to update filtered results |
 
