@@ -1,0 +1,176 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+ {% block pageNavigation %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+        {{ govukBreadcrumbs({
+        collapseOnMobile: true,
+        items: [
+            {
+            text: "Hub home",
+            href: "/hubHome"
+            },
+            {
+              text: "Events",
+              href: "/events"
+            },
+            {
+              text: "Seach Events",
+              href: "/event-search"
+            }
+            ]
+        }) }}
+  {% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Search Events
+  </h1>
+
+  <p class="base-margin-bottom">All events being held in the AAN are listed on this page. You can filter events by your role, region and event type. </p>
+
+
+  {%- from "govuk/components/checkboxes/macro.njk" import govukCheckboxes -%}
+  {%- from "govuk/components/input/macro.njk" import govukInput -%}
+  {%- from "govuk/components/table/macro.njk" import govukTable -%}
+  {%- from "moj/components/filter/macro.njk" import mojFilter -%}
+  {%- from "moj/components/button-menu/macro.njk" import mojButtonMenu -%}
+
+
+  {% set filterOptionsHtml %}
+
+  
+    {{ govukCheckboxes({
+      name: 'region',
+      classes: "govuk-checkboxes--small filter-region",
+      fieldset: {
+        legend: {
+          text: 'Region',
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: selectedRegions
+    }) }}
+  
+    {{ govukCheckboxes({
+      name: 'sector',
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: 'Sector',
+          classes: 'govuk-fieldset__legend--m'
+        }
+      },
+      items: selectedIndustry
+    })
+   }}
+  
+  {% endset %}
+  
+  
+  <div class="moj-filter-layout">
+  
+    <div class="moj-filter-layout__filter">
+  
+      {{ mojFilter({
+        heading: {
+        text: 'Filter'
+        },
+        selectedFilters: {
+  
+        heading: {
+          text: 'Selected filters'
+        },
+  
+        clearLink: {
+          text: 'Clear filters'
+        },
+  
+        categories: [
+          {
+            heading: {
+              text: 'Region'
+            },
+            items: [{
+              href: '#',
+              text: 'Blue'
+            }, {
+              href: '#',
+              text: 'Yellow'
+            }]
+          },
+          {
+            heading: {
+              text: 'Sector'
+            },
+            items: [{
+              href: '#',
+              text: 'Complete'
+            }]
+          }
+        ]
+      },
+        optionsHtml: filterOptionsHtml
+      }) }}
+  
+    </div>
+  
+    <div class="moj-filter-layout__content">
+  
+    <div class="moj-action-bar">
+  
+      <div class="moj-action-bar__filter"></div>
+  
+      {{ mojButtonMenu({
+        items: [{
+          text: 'Action 1',
+          classes: 'govuk-button--secondary'
+        }, {
+          text: 'Action 2',
+          classes: 'govuk-button--secondary'
+        }]
+      }) }}
+  
+    </div>
+  
+    <div class="moj-scrollable-pane">
+      <h4 class="govuk-body-s govuk-!-font-weight-bold">
+        {{filteredEvents | length}} events upcoming listed 
+      </h4>
+    
+      {% for event in filteredEvents %}
+            {% include "eventCard.html" %} 
+      {% endfor %}
+    </div>
+  </div>
+
+
+  <script>
+   
+   let boxes = document.querySelectorAll('.govuk-checkboxes__input')
+    let selectR = document.querySelector('#filter-region')
+    let selectI = document.querySelector('#filter-industry')
+
+    let newArr = [] 
+
+    boxes.forEach(box => {
+       addEventListener('change', (e) => {
+        if (e.target.checked){
+          let item = e.target
+           }
+          
+          
+               
+
+      })
+    })
+
+  </script>
+
+{% endblock %}
+

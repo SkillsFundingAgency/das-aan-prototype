@@ -58,49 +58,118 @@
 
   
     {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-        {{ govukInput({
-            label: {
-                text: "Did the meeting go ahead and
-                stay on agenda?"
-            },
-            id: "agenda?",
-            name: "agenda?"
-            }) 
-        }}
+    {{ govukRadios({
+         classes: "govuk-radios--small",
+         id: "agenda",
+         fieldset: {
+              legend: {
+                text: "Did the meeting go ahead and stay on agenda?",
+                classes: "govuk-body-m"
+          }
+     },
+        items: [
+              {
+                 value: "yes",
+                 text: "Yes"
+             },
+            {
+            value: "no",
+            text: "No"
+            }
+     ]
+        }) 
+    }}
 
-        {{ govukInput({
-            label: {
-                    text: "Were you able to get the support
-                    you needed from other 
-                    ambassadors / organisations?"
+        {{ govukRadios({
+            classes: "govuk-radios--small",
+            id: "agenda",
+            fieldset: {
+                legend: {
+                text: "Were you able to get the support you needed from other ambassadors / organisations?",
+                classes: "govuk-body-m"
+            }
+        },
+        items: [
+                {
+                    value: "yes",
+                    text: "Yes"
                 },
-            id: "support",
-            name: "support"
-            }) 
+            {
+            value: "no",
+            text: "No"
+            }
+        ]
+        }) 
         }}
 
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {{ govukRadios({
+            classes: "govuk-radios--small",
+            id: "future",
+            fieldset: {
+                legend: {
+                text: "Would you attend a similar event in the future?",
+                classes: "govuk-body-m"
+            }
+        },
+        items: [
+                {
+                    value: "yes",
+                    text: "Yes"
+                },
+            {
+            value: "no",
+            text: "No"
+            }
+        ]
+        }) 
+        }}
 
-            {{ govukTextarea({
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+            {{ govukCharacterCount({
             name: "role-at-event",
             id: "role-at-event",
+            maxlength: 500,
             label: {
-                text: "What was your main role at
-                the event?"
+                text: "What was your main role at the event?",
+                classes: "govuk-body-m"
             }
             }) 
         }}
 
-        {{ govukInput({
-            label: {
-                    text: "How many new AAN members
-                    did you meet?"
-                },
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+            {{ govukSelect({
             id: "new-members",
-            name: "new-members"
-            }) 
-        }}
+            name: "New Members",
+            label: {
+                text: "How many new AAN members did you meet?"
+            },
+                items: [
+                        {
+                        value: "0-5",
+                        text: "0-5"
+                        },
+                        {
+                            value: "6-10",
+                            text: "6-10"
+                        },
+                        {
+                            value: "11-15",
+                            text: "11-15"
+                        },
+                        {
+                            value: "16-20",
+                            text: "16-20"
+                        },
+                        {
+                            value: "21+",
+                            text: "21+"
+                        }
+                    ]
+            }) }}   
     
     
     {% from "govuk/components/button/macro.njk" import govukButton %}

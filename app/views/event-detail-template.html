@@ -113,11 +113,43 @@
     <p class="govuk-body-m base-margin-bottom">
         See AAN members who are currently signed up to attend this event:</p>
 
-    <div class="flex">
-
-        {% for member in members %}
+    <div id="profileContainer" class="flex column small-margin-bottom">
+        <div class="flex base-margin-bottom">
+            {% for member in members %}
             {% include "profilePics.html" %} 
-        {% endfor %}
+             {% endfor %}
+        </div>
+        
+
+        <a id="seeAll" class="govuk-body-m">See all attendees</a>
+    </div>
+
+    <div id="allAttendees" class=" hidden small-margin-bottom">
+
+        {% from "govuk/components/table/macro.njk" import govukTable %}
+
+        {{ govukTable({
+          caption: "AAN members attending",
+          captionClasses: "govuk-table__caption--m",
+          attributes: {
+              href: "#"
+          },
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Profile",
+              classes: 'app-custom-class'
+            },
+            {
+              text: "Name",
+              classes: 'app-custom-class'
+            }
+          ],
+          rows: attendees
+        }) 
+    }}
+        
+
     </div>
 
     {% set cards = [
@@ -142,4 +174,18 @@
         }) 
     }}
 
+    <script>
+
+        let profileContainer = document.querySelector('profileContainer')
+        let attend = document.querySelector('#seeAll');
+        
+        let attendeeContainer = document.querySelector('#allAttendees')
+        
+      attend.addEventListener("click", () => {
+          attendeeContainer.classList.toggle('hidden')
+        
+        })
+        
+    </script>
 {% endblock %}
+

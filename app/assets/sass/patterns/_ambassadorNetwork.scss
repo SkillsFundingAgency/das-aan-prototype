@@ -149,3 +149,11 @@ gap: 24px;
 .training-content {
     flex-grow: 1;
 }
+
+.column {
+    flex-direction: column;
+}
+
+#seeAll:hover {
+    cursor: pointer;
+}
