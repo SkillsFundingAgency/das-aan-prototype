@@ -341,7 +341,7 @@ let profiles = [
         date: "26th September 2022",
         industry: "construction",
         id: 4,
-        src: "/public/images/Fiona.jpg",
+        src: "/public/images/fiona.jpg",
         email: "apprentice@gov.uk",
         role: "Chartered surveyor",
         employer: "Mace Ltd"
