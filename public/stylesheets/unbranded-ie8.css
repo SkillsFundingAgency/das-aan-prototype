@@ -8447,6 +8447,8 @@ h4 {
 
 .content-card {
   margin-bottom: 30px;
+  padding: 16px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
 }
 
 ul {
