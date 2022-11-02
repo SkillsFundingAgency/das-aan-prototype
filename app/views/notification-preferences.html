@@ -73,6 +73,33 @@
     
 }}
 
+{{ govukRadios({
+  classes: "govuk-radios--small flex",
+  name: "local-event-opportunities",
+  formGroup: {
+      classes: "flex"
+  },
+  fieldset: {
+      classes: "flex",
+      legend: {
+      text: "Local event opportunties",
+      classes: ""
+      }
+  },
+  items: [
+      {
+      value: "yes",
+      text: "Yes"
+      },
+      {
+      value: "no",
+      text: "No"
+      }
+  ]
+  })
+  
+}}
+
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
@@ -102,6 +129,32 @@
     
 }}
 
+{{ govukRadios({
+  classes: "govuk-radios--small flex",
+  name: "inPerson-event-opportunities",
+  formGroup: {
+      classes: "flex"
+  },
+  fieldset: {
+      classes: "flex",
+      legend: {
+      text: "In person event opportunties",
+      classes: ""
+      }
+  },
+  items: [
+      {
+      value: "yes",
+      text: "Yes"
+      },
+      {
+      value: "no",
+      text: "No"
+      }
+  ]
+  })
+  
+}}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
@@ -252,13 +305,13 @@ items: [
               },
               items: [
                   {
-                  value: "daily",
-                  text: "Daily"
-                  },
-                  {
                   value: "weekly",
                   text: "Weekly"
                   },
+                  {
+                    value: "fortnightly",
+                    text: "Fortnightly"
+                    },
                   {
                       value: "monthly",
                       text: "Monthly"

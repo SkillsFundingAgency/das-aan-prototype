@@ -43,7 +43,9 @@ h4 {
 }
 
 .content-card {
-    margin-bottom: $small-margin
+    margin-bottom: $small-margin;
+    padding: 16px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
 }
 
 ul {
@@ -148,4 +150,12 @@ gap: 24px;
 
 .training-content {
     flex-grow: 1;
+}
+
+.column {
+    flex-direction: column;
+}
+
+#seeAll:hover {
+    cursor: pointer;
 }

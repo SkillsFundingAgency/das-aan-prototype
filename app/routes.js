@@ -126,11 +126,6 @@ const networkSettings = [
 
 let regions = [
     {
-      value: "choose-region",
-      text: "Choose a Region",
-      selected: false
-    },
-    {
       value: "south-west",
       text: "South West",
       selected: false
@@ -179,84 +174,79 @@ let regions = [
 
 let industries = [
     {
-        value: "choose-industry",
-        text: "Choose a sector",
-        selected: false
-      },
-      {
         value: "business-and-administration",
         text: "Business and administration",
-        selected: false
+        checked: false
       },
       {
         value: "creative-and-design",
         text: "Creative and design",
-        selected: false
+        checked: false
       },
       {
         value: "health-and-science",
         text: "Health and science",
-        selected: false
+        checked: false
       },
       {
         value: "care-services",
         text: "Care-services",
-        selected: false
+        checked: false
       },
       {
           value: "sales-marketing-and-procurement",
           text: "Sales, marketing and procurement",
-          selected: false
+          checked: false
       },
       {
           value: "transport-and-logistics",
           text: "Transport and logistics",
-          selected: false
+          checked: false
         },
       {
           value: "legal-finance-and-accounting",
           text: "Legal, finance and accounting",
-          selected: false
+          checked: false
       },
       {
           value: "protective-services",
           text: "Protective services",
-          selected: false
+          checked: false
       },
       {
           value: "catering-and-hospitality",
           text: "Catering and hospitality",
-          selected: false
+          checked: false
       },
       {
         value: "digital",
         text: "Digital",
-        selected: false
+        checked: false
         },
     {
         value: "engineering-and-manufacturing",
         text: "Engineering and manufacturing",
-        selected: false
+        checked: false
     },
     {
         value: "hair-and-beauty",
         text: "Hair and beauty",
-        selected: false
+        checked: false
     },
     {
         value: "agriculture-environmental-and-animal-care",
         text: "Agriculture, environmental and animal care",
-        selected: false
+        checked: false
     }, 
     {
         value: "construction",
         text: "Construction",
-        selected: false
+        checked: false
     }, 
     {
         value: "education-and-childcare",
         text: "Education and childcare",
-        selected: false
+        checked: false
     }
 ]
 
@@ -351,7 +341,7 @@ let profiles = [
         date: "26th September 2022",
         industry: "construction",
         id: 4,
-        src: "/public/images/Fiona.jpg",
+        src: "/public/images/fiona.jpg",
         email: "apprentice@gov.uk",
         role: "Chartered surveyor",
         employer: "Mace Ltd"
@@ -490,10 +480,24 @@ router.get('/event-notifications/:eventid', (req, res) => {
         return item.eventId == id
       })
 
+      let newProfiles = [...profiles]
+
+      let attendees = newProfiles.map(item => {
+        return [
+            {
+                html: `<img class="profile" src="${item.src}"/>`,
+                classes: 'profile'
+            },
+            {
+                html: `<a href="#">${item.name}</a>`
+            }
+        ]
+    })  
+
       console.log(selectedEvent)
 
       if(selectedEvent){
-          res.render('event-detail-template', { selectedEvent, members })
+          res.render('event-detail-template', { selectedEvent, members, attendees })
       }
       else {
           res.send("sorry no event details")
@@ -578,6 +582,52 @@ router.get('/remove-event', (req, res) => {
     res.render('remove-event', { members, events })
 }),
 
+router.get('/eventSearchNew', (req, res) => {
+    let filterR = req.query.r
+    console.log(filterR)
+
+    let filterI = req.query.i
+
+    let filteredEvents = [...events]
+
+    if ((filterR == undefined || filterR == 'choose-region') && (filterI == undefined || filterI == 'choose-industry')){
+       filteredEvents = [...events]
+    }
+    else {
+        if(filterR && filterR !== 'choose-region') {
+            filteredEvents = filteredEvents.filter(event => {
+                return event.eventLocation === filterR
+            })
+        }
+        if(filterI && filterI !== 'choose-industry'){
+            filteredEvents = filteredEvents.filter(event => {
+                console.log(filteredEvents)
+                return event.industry == filterI
+            })
+        }
+    }
+
+    let selectedRegions = regions.map(region => {
+       if(region.value === filterR){
+        return {...region, checked: true}
+       }
+       else {
+           return region
+       }
+    })
+    let selectedIndustry = industries.map(industry => {
+        if(industry.value === filterI){
+         return {...industry, selected: true}
+        }
+        else {
+            return industry
+        }
+     })
+
+    res.render('eventSearchNew', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry })
+    
+}),
+
 
 // PROFILE SETTINGS 
 
@@ -598,7 +648,7 @@ router.get('/network-directory', (req, res) => {
     
     let filteredProfiles = [...profiles]
 
-    if((filterR == undefined || filterR == 'choose-region') && (filterI == undefined || filterI == 'choose-region') && (filterA == undefined || filterA == 'choose-region')){
+    if((filterR == undefined || filterR == 'choose-region') && (filterI == undefined || filterI == 'choose-industry')){
         filteredProfiles = [...profiles]
     }
     else { 
@@ -607,20 +657,14 @@ router.get('/network-directory', (req, res) => {
             return profile.region == filterR
             })
         }
-        if(filterI && filterI !== 'choose-region'){
+        if(filterI && filterI !== 'choose-industry'){
             filteredProfiles = filteredProfiles.filter(profile => {
                 return profile.industry == filterI
             })
         }
         console.log(filteredProfiles )
-
-        if(filterA && filterA !== 'choose-region'){
-            filteredProfiles = filteredProfiles.filter(profile => {
-                 return profile.appr == filterA
-            })
-         }
     }
-   
+    
 
     console.log(filteredProfiles)
 
@@ -693,7 +737,20 @@ router.get('/profile/:id', (req, res) => {
 
 router.get('/event-detail', function (req, res) {
     let page = req.query.number
-    res.render('event-detail', { page })
+
+    let newProfiles = [...profiles]
+
+    let attendeeRows = newProfiles.map(profile => {
+        return [
+            {
+                text: "hello"
+            },
+            {
+                text: profile.name
+            }
+        ]
+    })  
+    res.render('event-detail', { page, attendeeRows })
 }),
 
 module.exports = router
