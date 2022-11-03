@@ -24,7 +24,8 @@ const events = [
     },
     {
         eventTitle: "Clifton High School apprenticeship event",
-        type: "Hybrid",
+        eventform:"Hybrid",
+        eventtype:"School event",
         date: "Monday 31st October 2022",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
         summary1: "An opportunity to champion apprenticeships and talk to students at Clifton High School about your own journey as an apprentice.", 
