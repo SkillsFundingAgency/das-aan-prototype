@@ -47,11 +47,30 @@
                {{selectedEvent.type}}
     </p>
 
+    {% if selectedEvent.type == "Hybrid" %}
+
+    <p class="govuk-body-l 
+    medium-margin-bottom">
+    As this is a hybrid event, network members can attend this event in person or join the event via the video conference link below.
+    </p>
+
+    {% endif %}
+
     <p class="govuk-body-l 
                small-margin-bottom">
                <strong>Event Date:</strong>
                {{selectedEvent.date}}
     </p>
+
+    {% if selectedEvent.type == "Hybrid" or selectedEvent.type == "Online" %}
+
+    <p class="govuk-body-l 
+    medium-margin-bottom">
+            <strong>Online Link:</strong>
+            <a href="#" class="govuk-body-l govuk-link indent-s">https://teams.microsoft.com/meetingOptions/?organizerId=8878620b</a>
+    </p>
+
+    {% endif %}
 
     <p class="govuk-body-l 
              base-margin-bottom">
@@ -160,10 +179,6 @@
         }
     ]
     %}
-    
-    {% for card in cards %}
-        {% include "eventCard.html" %} 
-    {% endfor %}
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
@@ -187,5 +202,6 @@
         })
         
     </script>
-{% endblock %}
+     
+     {% endblock %}
 

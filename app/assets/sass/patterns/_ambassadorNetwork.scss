@@ -159,3 +159,8 @@ gap: 24px;
 #seeAll:hover {
     cursor: pointer;
 }
+
+.grid {
+    display: grid;
+    grid-column: 1fr 1fr;
+}
