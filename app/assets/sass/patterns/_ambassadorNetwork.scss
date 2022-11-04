@@ -43,19 +43,16 @@ h4 {
 }
 
 .content-card {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
     margin-bottom: $small-margin;
     padding: 18px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
 }
 
-// .newContent {
-//     display: grid;
-//     grid-template-columns: 2fr 1fr;
-//     grid-template-rows: 1fr 1fr;
-// }
+.new-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 
 ul {
     padding:0px;
