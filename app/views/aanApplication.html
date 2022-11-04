@@ -14,14 +14,15 @@
         Your AAN Application
     </h1>
 
-    {
-      text:"The following pre-populated information is taken from your existing apprenticeship account on GOV.UK."
-    },
+    <p class="govuk-body-m">The following pre-populated information is taken from your existing apprenticeship account on GOV.UK.</p>
+
     <form action="/consent" method="post" novalidate>
 
     {% from "govuk/components/input/macro.njk" import govukInput %}
     {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
     {% from "govuk/components/select/macro.njk" import govukSelect %} 
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukInput({
             label: {
@@ -34,50 +35,33 @@
             }) 
         }}
 
+            
+         {{ govukCheckboxes({
+          name: 'region',
+          classes: "govuk-checkboxes--small filter-region",
+          fieldset: {
+            legend: {
+              text: "Please choose the region(s) that include the location of your employer.",
+              classes: 'govuk-body--m'
+            }
+          },
+          items: regions,
+          value: data['filter-region']
 
-            {{ govukDateInput({
-              id: "date-of-birth",
-              namePrefix: "[date-of-birth]",
-              fieldset: {
-                legend: {
-                  text: "Enter your date of birth"
-                }
-              },
-              items: [
-                  {
-                    name: "day",
-                    id: "day",
-                    classes: "govuk-input--width-2",
-                    value: data['date-of-birth-day']
-                  },
-                  {
-                    name: "month",
-                    id: "month",
-                    classes: "govuk-input--width-2",
-                    value: data['date-of-birth-month']
-                  },
-                  {
-                    name: "year",
-                    id: "year",
-                    classes: "govuk-input--width-4",
-                    value: data['date-of-birth-year']
-                  }
-              ],
-              hint: {
-                text: "For example, 27 3 2007"
-              }
-            }) }}
+        }) }}  
+
+        {% from "govuk/components/select/macro.njk" import govukSelect %}
 
             {{ govukSelect({
-              id: "filter-region",
-             name: "filter-regions",
-              label: {
-                     text: "Region"
-             },
-              items: regions,
-              value: data['filter-region']
-             })
-         }}    
+            id: "new-members",
+            name: "New Members",
+            label: {
+                text: "Please select the sector of your apprenticeship?"
+            },
+            items: industrySelect
+            }) }}   
+    
+    
 
 
         {{ govukInput({
@@ -117,11 +101,7 @@
             }) 
         }}
 
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-
-      
-        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+     
 
         {{ govukCheckboxes({
           name: "network-preferences",
@@ -153,14 +133,14 @@
             },
             {
               value: "Social Media",
-              text: "social media"
+              text: "Social Media"
             },
             {
               value: "Awards",
-              text: "awards"
+              text: "Awards"
             },
              {
-              value: "resources and templates",
+              value: "Resources and Templates",
               text: "Resources and templates"
             }
           ]

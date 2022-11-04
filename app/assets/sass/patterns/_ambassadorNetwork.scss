@@ -43,6 +43,8 @@ h4 {
 }
 
 .content-card {
+    display: flex;
+    flex-direction: row;
     margin-bottom: $small-margin;
     padding: 16px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
@@ -160,7 +162,8 @@ gap: 24px;
     cursor: pointer;
 }
 
-.grid {
+.gridCard {
     display: grid;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }

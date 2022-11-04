@@ -251,6 +251,84 @@ let industries = [
     }
 ]
 
+let industrySelect = [
+    {
+        value: "business-and-administration",
+        text: "Business and administration",
+        selected: false
+      },
+      {
+        value: "creative-and-design",
+        text: "Creative and design",
+        selected: false
+      },
+      {
+        value: "health-and-science",
+        text: "Health and science",
+        selected: false
+      },
+      {
+        value: "care-services",
+        text: "Care-services",
+        selected: false
+      },
+      {
+          value: "sales-marketing-and-procurement",
+          text: "Sales, marketing and procurement",
+          selected: false
+      },
+      {
+          value: "transport-and-logistics",
+          text: "Transport and logistics",
+          selected: false
+        },
+      {
+          value: "legal-finance-and-accounting",
+          text: "Legal, finance and accounting",
+          selected: false
+      },
+      {
+          value: "protective-services",
+          text: "Protective services",
+          selected: false
+      },
+      {
+          value: "catering-and-hospitality",
+          text: "Catering and hospitality",
+          selected: false
+      },
+      {
+        value: "digital",
+        text: "Digital",
+        selected: false
+        },
+    {
+        value: "engineering-and-manufacturing",
+        text: "Engineering and manufacturing",
+        selected: false
+    },
+    {
+        value: "hair-and-beauty",
+        text: "Hair and beauty",
+        selected: false
+    },
+    {
+        value: "agriculture-environmental-and-animal-care",
+        text: "Agriculture, environmental and animal care",
+        selected: false
+    }, 
+    {
+        value: "construction",
+        text: "Construction",
+        selected: false
+    }, 
+    {
+        value: "education-and-childcare",
+        text: "Education and childcare",
+        selected: false
+    }
+]
+
 let apprentices = [
     {
         value: "choose-region",
@@ -460,7 +538,7 @@ let members = [
 let selectedEvent = null
 
 router.get('/aanApplication', (req, res) => {
-    res.render('aanApplication',  {regions} )
+    res.render('aanApplication',  {regions, industrySelect} )
 })
 
 
