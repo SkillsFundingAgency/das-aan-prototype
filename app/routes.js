@@ -12,7 +12,7 @@ const events = [
     {
         eventTitle: "Manchester AAN regional meet-up",
         type: "In person",
-        date: "Thursday 27th October 2022",
+        date: "27th October 2022",
         eventDetail: "Join AAN colleagues across your region toupdate on recent activity, share insight and celebrate achievements.",
         eventLocation: "north-west",
         eventBuilding: "Manchester Town Hall, Albert square, M2 5DB",
@@ -26,7 +26,7 @@ const events = [
         eventTitle: "Clifton High School apprenticeship event",
         eventform:"Hybrid",
         eventtype:"School event",
-        date: "Monday 31st October 2022",
+        date: "31st October 2022",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
         summary1: "An opportunity to champion apprenticeships and talk to students at Clifton High School about your own journey as an apprentice.", 
         summary2: "Share the biggest challenges you have faced, your success stories and inspire those who are considering an apprenticeship as the next step in their career.",
@@ -41,7 +41,7 @@ const events = [
     {
         eventTitle: "AAN Online Case Study Session",
         type: "Online",
-        date: "Tuesday 1st November 2022",
+        date: "1st November 2022",
         eventDetail: "Share your own case studies with colleagues across the region.",
         summary1: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network.", 
         summary2: "For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.",
@@ -56,6 +56,7 @@ const events = [
     }, 
     {
         eventTitle: "Event 4",
+        date: "21st December 2022",
         eventDetail: "West Midlands meetup",
         eventLocation: "west-midlands",
         industry: "business-and-administration",
@@ -63,6 +64,7 @@ const events = [
     },
     {
         eventTitle: "Event 5",
+        date: "22nd November 2022",
         eventDetail: "Bristol schools event",
         eventLocation: "south-west",
         industry: "care-services",

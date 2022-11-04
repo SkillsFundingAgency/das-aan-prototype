@@ -52,6 +52,15 @@ h4 {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.cardInfo {
+    justify-items: flex-end;
+}
+
+.hybrid {
+    background-color: rgb(136, 213, 232);
 }
 
 ul {
