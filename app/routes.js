@@ -24,7 +24,7 @@ const events = [
     },
     {
         eventTitle: "Clifton High School apprenticeship event",
-        eventform:"Hybrid",
+        type:"Hybrid",
         eventtype:"School event",
         date: "31st October 2022",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
@@ -56,6 +56,7 @@ const events = [
     }, 
     {
         eventTitle: "Event 4",
+        type:"Hybrid",
         date: "21st December 2022",
         eventDetail: "West Midlands meetup",
         eventLocation: "west-midlands",
@@ -64,6 +65,7 @@ const events = [
     },
     {
         eventTitle: "Event 5",
+        type: "In person",
         date: "22nd November 2022",
         eventDetail: "Bristol schools event",
         eventLocation: "south-west",
@@ -72,6 +74,8 @@ const events = [
     }, 
     {
         eventTitle: "London online event",
+        type:"Hybrid",
+        date: "7th November 2022",
         eventDetail: "an online monthly catch up ",
         eventLocation: "london",
         industry: "business-and-administration",
@@ -79,6 +83,8 @@ const events = [
     }, 
     {
         eventTitle: "Manchester hybrid event",
+        type:"Hybrid",
+        date: "5th December 2022",
         eventDetail: "an online monthly catch up ",
         eventLocation: "north-west",
         industry: "creative-and-design",
@@ -86,6 +92,8 @@ const events = [
     }, 
     {
         eventTitle: "Newcastle hybrid event",
+        type: "In person",
+        date: "25th November 2022",
         eventDetail: "an online monthly catch up ",
         eventLocation: "north-east",
         industry: "creative-and-design",

@@ -56,11 +56,12 @@ h4 {
 }
 
 .cardInfo {
-    justify-items: flex-end;
+    justify-self: flex-end;
 }
 
 .hybrid {
     background-color: rgb(136, 213, 232);
+    padding: 4px;
 }
 
 ul {
