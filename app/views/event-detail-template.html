@@ -42,10 +42,17 @@
   </p>
 
   <p class="govuk-body-l 
+            base-margin-bottom">
+    <strong>Event Format:</strong>
+    {{selectedEvent.type}}
+  </p>
+
+  <p class="govuk-body-l 
                small-margin-bottom">
                <strong>Event Type:</strong>
-               {{selectedEvent.type}}
+               {{selectedEvent.format}}
     </p>
+    
 
     {% if selectedEvent.type == "Hybrid" %}
 
@@ -85,7 +92,7 @@
     </div>
 
     <p class="govuk-body-l 
-             small-margin-bottom">
+             base-margin-bottom">
         <strong>Start Time:</strong>
         {{selectedEvent.start}}
     </p>

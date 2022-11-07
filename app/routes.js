@@ -12,14 +12,13 @@ const events = [
     {
         eventTitle: "Manchester AAN regional meet-up",
         type: "In person",
+        format: "Meeting",
         date: "27th October 2022",
         time: "19:00-21:00",
-        eventDetail: "Join AAN colleagues across your region to update on recent activity, share insight and celebrate achievements.",
-        summary1: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network.", 
+        eventDetail: "Join regional AAN colleagues at Manchester Town Hall to share your recent activity within the network.",
+        summary1: "Fellow ambassadors will talk about their experience at recent events. There will be an insight sharing session, guest speakers and an opportunity to network with colleagues who are new to the network.", 
         summary2: "For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.",
         summary3: "*please note: this session will be recorded for those who are unable to attend.", 
-        
-        
         eventLocation: "north-west",
         eventBuilding: "Manchester Town Hall, Albert square, M2 5DB",
         start: "19:00",
@@ -31,7 +30,7 @@ const events = [
     {
         eventTitle: "Clifton High School apprenticeship event",
         type:"Hybrid",
-        eventtype:"School event",
+        format:"School event",
         date: "31st October 2022",
         time: "17:00-19:30",
         eventDetail: "An opportunity to champion apprenticeships and talk to students about your own journey as an apprentice.",
@@ -48,6 +47,7 @@ const events = [
     {
         eventTitle: "AAN Online Case Study Session",
         type: "Online",
+        format: "Case study",
         time: "13:00-14:30",
         date: "1st November 2022",
         eventDetail: "Share your own case studies with colleagues across the region.",
@@ -65,6 +65,7 @@ const events = [
     {
         eventTitle: "Event 4",
         type:"Hybrid",
+        format: "School event",
         date: "21st December 2022",
         time: "19:00-20:30",
         time: "19:00-21:00",
@@ -76,6 +77,7 @@ const events = [
     {
         eventTitle: "Event 5",
         type: "In person",
+        format: "Case study",
         date: "22nd November 2022",
         time: "18:00-20:00",
         eventDetail: "Bristol schools event",
@@ -86,6 +88,7 @@ const events = [
     {
         eventTitle: "London online event",
         type:"Hybrid",
+        format: "Meeting",
         date: "7th November 2022",
         time: "13:00-14:30",
         eventDetail: "an online monthly catch up ",
@@ -96,6 +99,7 @@ const events = [
     {
         eventTitle: "Manchester hybrid event",
         type:"Hybrid",
+        format: "Meeting",
         date: "5th December 2022",
         time: "15:00-16:30",
         eventDetail: "an online monthly catch up ",
@@ -106,6 +110,7 @@ const events = [
     {
         eventTitle: "Newcastle hybrid event",
         type: "In person",
+        format: "School Event",
         date: "25th November 2022",
         time: "13:00-14:30",
         eventDetail: "an online monthly catch up ",
