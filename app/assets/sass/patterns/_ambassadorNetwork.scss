@@ -45,14 +45,15 @@ h4 {
 .content-card {
     margin-bottom: $small-margin;
     padding: 18px;
+    border-radius: 6px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
 }
 
 .new-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 4fr 1.5fr;
     grid-template-rows: 1fr 2fr;
-    column-gap: 20px;
+    column-gap: 16px;
 }
 
 .cardInfo {
@@ -67,6 +68,10 @@ h4 {
 .cardInfo1 {
     justify-self: flex-end;
     padding: 4px;
+}
+
+.text {
+    text-align: end;
 }
 
 .card-p {
@@ -131,6 +136,10 @@ gap: 24px;
     margin-top: $small-margin;
 }
 
+.base-margin-top {
+    margin-top: $base-margin;
+}
+
 .feedback-container {
     background-color: #e8e8e8;
     border-radius: 10px;
@@ -169,10 +178,10 @@ gap: 24px;
     display: flex;
     gap: 10px;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0px 4px 4px 0px #bfbdbd;
     background-color: #ffffff;
-    border: 1px solid rgb(136, 213, 232);
+    border: 1px solid #3277D2;
     padding: 10px;
     margin: 10px;
     align-content: flex-start;

@@ -44,7 +44,17 @@
 
   {% set filterOptionsHtml %}
 
-  
+  {{ govukSelect({
+    id: "filter-date",
+   name: "filter-date",
+    label: {
+           text: "Filter events by date"
+   },
+    items: dates
+   })
+  }}
+
+
     {{ govukCheckboxes({
       name: 'region',
       classes: "govuk-checkboxes--small filter-region",
@@ -98,10 +108,10 @@
             },
             items: [{
               href: '#',
-              text: 'Blue'
+              text: 'South West'
             }, {
               href: '#',
-              text: 'Yellow'
+              text: 'London'
             }]
           },
           {
@@ -110,7 +120,7 @@
             },
             items: [{
               href: '#',
-              text: 'Complete'
+              text: 'Health and science'
             }]
           }
         ]
@@ -124,21 +134,12 @@
   
     <div class="moj-action-bar">
   
-      <div class="moj-action-bar__filter"></div>
+      <div class="moj-action-bar"></div>
   
-      {{ mojButtonMenu({
-        items: [{
-          text: 'Action 1',
-          classes: 'govuk-button--secondary'
-        }, {
-          text: 'Action 2',
-          classes: 'govuk-button--secondary'
-        }]
-      }) }}
-  
+    
     </div>
   
-    <div class="moj-scrollable-pane">
+    <div class="moj-scrollable-pane base-margin-top">
       <h4 class="govuk-body-s govuk-!-font-weight-bold">
         {{filteredEvents | length}} events upcoming listed 
       </h4>

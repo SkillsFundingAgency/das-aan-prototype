@@ -14,7 +14,12 @@ const events = [
         type: "In person",
         date: "27th October 2022",
         time: "19:00-21:00",
-        eventDetail: "Join AAN colleagues across your region toupdate on recent activity, share insight and celebrate achievements.",
+        eventDetail: "Join AAN colleagues across your region to update on recent activity, share insight and celebrate achievements.",
+        summary1: "Share your current case studies with AAN colleagues across your region and stay up to date with recent activity within the network.", 
+        summary2: "For those wishing to present, please contact Sam Kershaw prior to Tuesday 25 October outlining your case studies and how long you need allocating in the agenda.",
+        summary3: "*please note: this session will be recorded for those who are unable to attend.", 
+        
+        
         eventLocation: "north-west",
         eventBuilding: "Manchester Town Hall, Albert square, M2 5DB",
         start: "19:00",
@@ -267,6 +272,29 @@ let industries = [
         value: "education-and-childcare",
         text: "Education and childcare",
         checked: false
+    }
+]
+
+let dates = [
+    {
+        value: "filter-by-event-date",
+        text: "Filter by event date",
+        selected: false
+    },
+    {
+        value: "this-week",
+        text: "This week",
+        selected: false
+    },
+    {
+        value: "this-month",
+        text: "This month",
+        selected: false
+    },
+    {
+        value: "next-3-months",
+        text: "The Next 3 Months",
+        selected: false
     }
 ]
 
@@ -722,7 +750,7 @@ router.get('/eventSearchNew', (req, res) => {
         }
      })
 
-    res.render('eventSearchNew', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry })
+    res.render('eventSearchNew', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry, dates })
     
 }),
 
