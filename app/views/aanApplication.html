@@ -89,17 +89,20 @@
             }) 
         }}
 
-        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-            {{ govukTextarea({
-            name: "application-reasons",
-            id: "application-reasons",
-            label: {
-                text: "Please outline why you want to join the network (max 250 characters)"
-            },
-            value: data['application-reasons']
-            }) 
-        }}
+        {{ govukCharacterCount({
+        name: "with-hint",
+        id: "with-hint",
+        maxlength: 250,
+        label: {
+          text: "Please outline why you want to join the network (max 250 characters)",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        value: data['application-reasons']
+        }) 
+      }}
 
      
 
