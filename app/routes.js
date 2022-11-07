@@ -687,7 +687,7 @@ router.get('/event-search', (req, res) => {
         }
      })
 
-    res.render('event-search', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry })
+    res.render('event-search', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry, dates })
     
 }),
 
