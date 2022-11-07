@@ -139,6 +139,7 @@ gap: 24px;
 
 .hub-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 12px;
 }
@@ -149,7 +150,8 @@ gap: 24px;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px #bfbdbd;
-    background-color: #EAE9E9;
+    background-color: #ffffff;
+    border: 1px solid rgb(136, 213, 232)
     padding: 10px;
     margin: 10px;
     align-content: flex-start;
