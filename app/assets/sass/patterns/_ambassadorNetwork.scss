@@ -56,12 +56,33 @@ h4 {
 }
 
 .cardInfo {
+    display: flex;
     justify-self: flex-end;
+    align-items: center;
+    height: fit-content;
+    background-color: #e8e8e8;
+    padding: 8px;
+}
+
+.cardInfo1 {
+    justify-self: flex-end;
+    padding: 4px;
+}
+
+.card-p {
+    margin: 0;
+}
+
+.online {
+    background-color: #88D5E8;
+}
+
+.inPerson {
+    background-color: #AFA6CE;
 }
 
 .hybrid {
-    background-color: rgb(136, 213, 232);
-    padding: 4px;
+    background-color: #A5D9B4;
 }
 
 ul {

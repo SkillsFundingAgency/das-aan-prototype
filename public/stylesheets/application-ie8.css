@@ -8447,8 +8447,45 @@ h4 {
 
 .content-card {
   margin-bottom: 30px;
-  padding: 16px;
+  padding: 18px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.185);
+}
+
+.new-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  column-gap: 20px;
+}
+
+.cardInfo {
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+  height: fit-content;
+  background-color: #e8e8e8;
+  padding: 8px;
+}
+
+.cardInfo1 {
+  justify-self: flex-end;
+  padding: 4px;
+}
+
+.card-p {
+  margin: 0;
+}
+
+.online {
+  background-color: #88D5E8;
+}
+
+.inPerson {
+  background-color: #AFA6CE;
+}
+
+.hybrid {
+  background-color: #A5D9B4;
 }
 
 ul {
@@ -8526,6 +8563,7 @@ ol {
 
 .hub-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 12px;
 }
@@ -8536,7 +8574,8 @@ ol {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px #bfbdbd;
-  background-color: #EAE9E9;
+  background-color: #ffffff;
+  border: 1px solid rgb(136, 213, 232);
   padding: 10px;
   margin: 10px;
   align-content: flex-start;
@@ -8561,4 +8600,10 @@ ol {
 
 #seeAll:hover {
   cursor: pointer;
+}
+
+.gridCard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
