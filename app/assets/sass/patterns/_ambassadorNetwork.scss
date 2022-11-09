@@ -204,6 +204,10 @@ gap: 24px;
     flex-direction: column;
 }
 
+.flex-start {
+    align-items: flex-start;
+}
+
 #seeAll:hover {
     cursor: pointer;
 }

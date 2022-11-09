@@ -11,7 +11,7 @@
 {% block content %}
 
     <h1 class="govuk-heading-xl">
-        Your AAN Application
+        Your AAN application
     </h1>
 
     <p class="govuk-body-m">The following pre-populated information is taken from your existing apprenticeship account on GOV.UK.</p>
@@ -41,9 +41,12 @@
           classes: "govuk-checkboxes--small filter-region",
           fieldset: {
             legend: {
-              text: "Please choose the region(s) that include the location of your employer.",
+              text: "Please choose the region(s) you are active in as an apprentice",
               classes: 'govuk-body--m'
             }
+          },
+          hint: {
+              text: "This can be the location of your employer"
           },
           items: regions,
           value: data['filter-region']
@@ -56,7 +59,7 @@
             id: "new-members",
             name: "New Members",
             label: {
-                text: "Please select the sector of your apprenticeship?"
+                text: "Please select the sector of your apprenticeship"
             },
             items: industrySelect
             }) }}   
