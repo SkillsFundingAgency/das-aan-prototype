@@ -37,22 +37,38 @@
   {{selectedEvent.eventTitle}}
   </h1>
   
-  <p class="govuk-body-l">
-   All details about this event:
-  </p>
+  <div class="content-card border-card">
 
-  <p class="govuk-body-l 
-            base-margin-bottom">
-    <strong>Event format:</strong>
-    {{selectedEvent.type}}
-  </p>
 
-  <p class="govuk-body-l 
+    <p class="govuk-body-l 
                small-margin-bottom">
-               <strong>Event type:</strong>
-               {{selectedEvent.format}}
+               <strong>Event date:</strong>
+               {{selectedEvent.date}}
+    </p>
+
+    <p class="govuk-body-m 
+             base-margin-bottom">
+        <strong>Start time:</strong>
+        {{selectedEvent.start}}
+    </p>
+
+    <p class="govuk-body-m 
+                small-margin-bottom">
+            <strong>End time:</strong>
+            {{selectedEvent.end}}
+    </p>
+
+    <p class="govuk-body-l 
+             base-margin-bottom">
+        <strong>Event location:</strong>
+        {{selectedEvent.eventBuilding}}
     </p>
     
+    <div class="flex base-margin-bottom">
+        <img src="/public/images/pin.png" alt="location" height="30px">
+
+        <a href="#" class="govuk-body-m govuk-link indent-xs">https://goo.gl/maps/hDEMtrUzgn16MWTQ8</a>
+    </div>
 
     {% if selectedEvent.type == "Hybrid" %}
 
@@ -62,12 +78,6 @@
     </p>
 
     {% endif %}
-
-    <p class="govuk-body-l 
-               small-margin-bottom">
-               <strong>Event date:</strong>
-               {{selectedEvent.date}}
-    </p>
 
     {% if selectedEvent.type == "Hybrid" or selectedEvent.type == "Online" %}
 
@@ -79,39 +89,27 @@
 
     {% endif %}
 
-    <p class="govuk-body-l 
-             base-margin-bottom">
-        <strong>Event location:</strong>
-        {{selectedEvent.eventBuilding}}
-    </p>
     
-    <div class="flex small-margin-bottom">
-        <img src="/public/images/pin.png" alt="location" height="30px">
 
-        <a href="#" class="govuk-body-l govuk-link indent-s">https://goo.gl/maps/hDEMtrUzgn16MWTQ8</a>
-    </div>
+  <p class="govuk-body-m 
+            base-margin-bottom">
+    <strong>Event format:</strong>
+    {{selectedEvent.type}}
+  </p>
 
-    <p class="govuk-body-l 
-             base-margin-bottom">
-        <strong>Start time:</strong>
-        {{selectedEvent.start}}
-    </p>
+  <p class="govuk-body-m 
+  base-margin-bottom">
+      <strong>Event type:</strong>
+    {{selectedEvent.format}}
+  </p>
 
-    <p class="govuk-body-l 
-                small-margin-bottom">
-            <strong>End time:</strong>
-            {{selectedEvent.end}}
-    </p>
 
-    <p class="govuk-body-l 
+  </div>
+
+
+    <div class="govuk-body-m 
             medium-margin-bottom">
-                 <strong>Event contact:</strong>
-                {{selectedEvent.contact}}
-    </p>    
-
-    <div class="govuk-body-l 
-            medium-margin-bottom">
-                <p class="small-margin-bottom"> 
+                <p class="base-margin-bottom"> 
                     <strong>Event summary:</strong>
                 {{selectedEvent.summary1}}</p>
                 <p>{{selectedEvent.summary2}}</p>
@@ -119,7 +117,7 @@
 </div>  
 
  
-    <p class="govuk-body-l 
+    <p class="govuk-body-m 
             small-margin-bottom">
                  <strong>Guest speakers:</strong><br>
 
@@ -127,6 +125,14 @@
                 <strong> Emanuel - Parc and Recs of MCR</strong>
                 
     </p>   
+
+
+    <p class="govuk-body-m 
+            medium-margin-bottom">
+                 <strong>Event contact:</strong>
+                {{selectedEvent.contact}}<br>
+                For any additional needs please get in touch.
+    </p>    
 
 
     <p class="govuk-body-m base-margin-bottom">

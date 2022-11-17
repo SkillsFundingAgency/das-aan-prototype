@@ -54,6 +54,26 @@
    })
   }}
 
+  {{ govukSelect({
+    id: "filter-type",
+   name: "filter-type",
+    label: {
+           text: "Filter events by type"
+   },
+    items: eventType
+   })
+  }}
+
+  {{ govukSelect({
+    id: "filter-format",
+   name: "filter-format",
+    label: {
+           text: "Filter events by event format"
+   },
+    items: eventFormat
+   })
+  }}
+
 
     {{ govukCheckboxes({
       name: 'region',

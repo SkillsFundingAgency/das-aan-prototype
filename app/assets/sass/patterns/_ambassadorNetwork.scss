@@ -192,6 +192,10 @@ gap: 24px;
     border-radius: 10px;
 }
 
+.border-card {
+    border: 1px solid rgb(0 0 0 / 19%)
+} 
+
 .small-padding {
     padding: 6px;
 }
@@ -216,4 +220,12 @@ gap: 24px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
+}
+
+.xs-margin-bottom {
+    margin-bottom: 6px;
+}
+
+.indent-xs {
+    padding-left: 10px;
 }

@@ -303,6 +303,66 @@ let dates = [
     }
 ]
 
+
+
+let eventType = [
+    {
+        value: "Choose-event-type",
+        text: "Choose event type",
+        selected: false
+    },
+    {
+        value: "ASK-event",
+        text: "ASK event",
+        selected: false
+    },
+    {
+        value: "Training",
+        text: "Training",
+        selected: false
+    },
+    {
+        value: "Meeting",
+        text: "Meeting",
+        selected: false
+    },
+    {
+        value: "AAN-organised-event",
+        text: "AAN organised event",
+        selected: false
+    },
+    {
+        value: "Social / Networking activity",
+        text: "Social / Networking activity",
+        selected: false
+    },
+
+]
+
+let eventFormat = [
+    {
+        value: "choose-event-format",
+        text: "Choose event format",
+        selected: false
+    },
+    {
+        value: "online",
+        text: "Online",
+        selected: false
+    },
+    {
+        value: "in-person",
+        text: "In person",
+        selected: false
+    },
+    {
+        value: "hybrid",
+        text: "Hybrid",
+        selected: false
+    }
+]
+
+
 let industrySelect = [
     {
         value: "business-and-administration",
@@ -687,7 +747,7 @@ router.get('/event-search', (req, res) => {
         }
      })
 
-    res.render('event-search', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry, dates })
+    res.render('event-search', { events, filterR, filterI, selectedRegions, filteredEvents, selectedIndustry, dates, eventType, eventFormat })
     
 }),
 
