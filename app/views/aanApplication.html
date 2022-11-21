@@ -14,9 +14,14 @@
         Your AAN application
     </h1>
 
-    <p class="govuk-body-m">The following pre-populated information is taken from your existing apprenticeship account on GOV.UK.</p>
-
-    <form action="/consent" method="post" novalidate>
+    <p class="govuk-body-m">The following pre-populated information is taken from your existing apprenticeship account on GOV.UK:</p>
+    <ul class="govuk-body-m medium-margin-bottom indent">
+      <li class="base-margin-bottom">name</li>
+      <li class="base-margin-bottom">email address</li>
+      <li class="base-margin-bottom">role</li>
+      <li class="base-margin-bottom">employer</li>
+      <li class="base-margin-bottom">application status</li>
+    </ul>
 
     {% from "govuk/components/input/macro.njk" import govukInput %}
     {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
