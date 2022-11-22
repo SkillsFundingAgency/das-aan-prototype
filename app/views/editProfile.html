@@ -40,21 +40,7 @@
     You can edit your profile below. To update your name, email and region please complete this in you gov.uk portal.
   </p>
 
-  <div class="flex
-              medium-margin-bottom
-              flex-start
-              column
-              medium-margin-bottom">
-    <img class="profile-image base-margin-bottom" src="/public/images/profile.jpg" alt="profile image" width="300px">
-    
-    {{ govukButton({
-      text: "Edit profile picture",
-      classes: "govuk-button--secondary",
-      href: '#'
-    }) 
-    }}
-    
-</div>
+
 
   
   {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
@@ -72,12 +58,30 @@
         }
       },
       {
+        key: {
+            text: "Profile photo:",
+            classes: "vertical-align"
+        },
+        value: {
+            html: '<img class="profile-image base-margin-bottom" src="/public/images/profile.jpg" alt="profile image" width="100px">'          },
+        actions: {
+          classes: "vertical-align",
+          items: [
+          {
+            href: "#",
+            text: "Edit",
+            visuallyHiddenText: "profile-photo"
+          }
+        ]
+          }
+      },
+      {
       key: {
           text: "Email address:"
       },
       value: {
           text: "paulsmith@gov.uk"
-      }  
+          }  
       },
       {
       key: {

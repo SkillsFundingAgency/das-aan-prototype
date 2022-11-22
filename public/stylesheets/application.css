@@ -12064,6 +12064,10 @@ ol {
   border-radius: 50%;
 }
 
+.vertical-align {
+  vertical-align: top;
+}
+
 .border-radius {
   border-radius: 20px;
 }
