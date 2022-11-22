@@ -67,35 +67,10 @@
                 text: "Please select the sector of your apprenticeship"
             },
             items: industrySelect
-            }) }}   
-    
-    
-
-
-        {{ govukInput({
-            label: {
-                 text: "Current line manager"
-                },
-                hint: {
-                  text: "We will contact your current line manager to make them aware you are applying to join the network and flag your commitment to attending AAN events within work hours."
-                },
-            id: "Current-line-manager",
-            classes: "govuk-input--width-10",
-            name: "Current-line-manager",
-            value: data['Current-line-manager']
             }) 
-        }}
+          }}  
 
-        {{ govukInput({
-            label: {
-                 text: "Current line manager email"
-                }, 
-            id: "line-manager-email",
-            name: "line-manager-email",
-            classes: "govuk-!-width-two-thirds",
-            value: data['line-manager-email']
-            }) 
-        }}
+      
 
         {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
@@ -153,7 +128,7 @@
              {
               value: "Resources and Templates",
               text: "Resources and templates"
-            }
+            },
             {
               value: "Comms",
               text: "Comms"
@@ -169,10 +144,52 @@
             {
               value: "Stakeholder Engagement",
               text: "Stakeholder Engagement"
-            },
+            }
           ]
          
         }) }}
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios--small",
+            name: "previous-engagement",
+            fieldset: {
+              legend: {
+                text: "Are you joining because you have engaged with a previous ambassador in the AAN",
+                classes: "govuk-uk--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        {{ govukCheckboxes({
+          name: "line-manager",
+          classes: "base-margin-bottom",
+          fieldset: {
+            legend: {
+              text: "Please confirm:",
+              classes: "govuk-!-font-weight-bold"  
+            }
+          },
+          value: data[line-manager],
+          items: [
+            {
+              value: "I have told my line manager I am joining the AAN",
+              text: "I have told my line manager I am joining the AAN"
+            } 
+          ]
+          })
+        }}
 
 
              {% from "govuk/components/button/macro.njk" import govukButton %}

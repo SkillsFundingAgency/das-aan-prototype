@@ -11972,7 +11972,7 @@ h4 {
 }
 
 .text {
-  text-align: end;
+  margin-bottom: 0;
 }
 
 .card-p {
