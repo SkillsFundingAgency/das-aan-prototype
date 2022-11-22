@@ -156,7 +156,7 @@
             name: "previous-engagement",
             fieldset: {
               legend: {
-                text: "Are you joining because you have engaged with a previous ambassador in the AAN",
+                text: "Are you joining because you have engaged with a previous ambassador in the AAN?",
                 classes: "govuk-uk--m"
               }
             },
@@ -195,7 +195,8 @@
              {% from "govuk/components/button/macro.njk" import govukButton %}
 
            {{ govukButton({
-               text: "Next"
+               text: "Next",
+               href: "consent"
            })
          }}
     
