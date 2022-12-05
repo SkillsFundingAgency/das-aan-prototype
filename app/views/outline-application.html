@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Outline why you want to join the network</h1>
+
+      <form class="form" action="/preferences" method="post">
+
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+        {{ govukCharacterCount({
+        name: "with-hint",
+        id: "with-hint",
+        maxlength: 250,
+        label: {
+          text: "Please outline why you want to join the network (max 250 characters)",
+          classes: "govuk-body-m",
+          isPageHeading: true
+        },
+        
+        value: data['application-reasons']
+        }) 
+      }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

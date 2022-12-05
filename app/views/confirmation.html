@@ -1,4 +1,4 @@
-{% extends "layout_unbranded.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -9,8 +9,8 @@
   {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
 {{ govukPanel({
-    titleText: "Your application has been submitted",
-    html: "We will contact you regarding your application shortly and outline next steps.<br>
+    titleText: "Thank you for your application",
+    html: "You will recieve an email outlining the next steps.<br>
     Your reference number is:<br><strong>HDJ2123F</strong>"
     }) 
 }}

@@ -1,4 +1,4 @@
-{% extends "layout_unbranded.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
@@ -21,91 +21,17 @@
 
       <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
+      <p class="govuk-body-m">Details from your application portal</p>
+      <p>If these are incorrect then please log in to your portal to change.</p>
+
+
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: {
-              text: "Name"
-            },
-            value: {
-              html: data['full-name']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/aanApplication",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Region"
-            },
-            value: {
-              text: data['filter-regions']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/aanApplication",
-                  text: "Change",
-                  visuallyHiddenText: "address"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Sector"
-            },
-            value: {
-              text: data['new-members']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/aanApplication",
-                  text: "Change",
-                  visuallyHiddenText: "address"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Current line manager"
-            },
-            value: {
-             text: data['Current-line-manager']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/aanApplication",
-                  text: "Change",
-                  visuallyHiddenText: "contact details"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
-
-
-      <h2 class="govuk-heading-m">Application details</h2>
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
-          {
-            key: {
-              text: "Application outline"
+              text: "Reasons for applying"
             },
             value: {
               text: data['application-reasons']
@@ -139,7 +65,7 @@
           },
           {
             key: {
-              text: "Previous engagement"
+              text: "Previous engagement with network ambassadors"
             },
             value: {
               text: data['previous-engagement']

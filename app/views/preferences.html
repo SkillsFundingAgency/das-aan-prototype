@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">How will you support the network?</h1>
+
+      <form class="form" action="/engagement" method="post">
+
+        {{ govukCheckboxes({
+          name: "network-preferences",
+          classes: "base-margin-bottom",
+          hint: {
+            text: "Select all that apply."
+          },
+          
+          items: [
+            {
+              value: "Online",
+              text: "Online Event"
+            },
+            {
+              value: "In Person",
+              text: "In person Events"
+            },
+            {
+              value: "Hybrid",
+              text: "Hybrid Events"
+            },
+            {
+              value: "Case Studies",
+              text: "Case Studies"
+            },
+            {
+              value: "Social Media",
+              text: "Social Media"
+            },
+             {
+              value: "Resources and Templates",
+              text: "Resources and templates"
+            },
+            {
+              value: "Comms",
+              text: "Comms"
+            },
+            {
+              value: "Design",
+              text: "Design"
+            },
+            {
+              value: "Project Management",
+              text: "Project Management"
+            },
+            {
+              value: "Stakeholder Engagement",
+              text: "Stakeholder Engagement"
+            }
+          ]
+         
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

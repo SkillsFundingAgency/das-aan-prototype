@@ -650,6 +650,18 @@ let members = [
 let selectedEvent = null
 
 router.get('/aanApplication', (req, res) => {
+    const errors = req.query.e
+    console.log(errors, "got query parameter")
+
+    if (errors){
+        
+    }
+
+
+
+
+
+
     res.render('aanApplication',  {regions, industrySelect} )
 })
 
