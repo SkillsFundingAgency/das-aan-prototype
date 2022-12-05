@@ -22,13 +22,14 @@
         {{ govukCharacterCount({
         name: "with-hint",
         id: "with-hint",
-        maxlength: 250,
-        label: {
-          text: "Please outline why you want to join the network (max 250 characters)",
-          classes: "govuk-body-m",
-          isPageHeading: true
+        fieldset: {
+          legend: {
+            text: "Please outline why you want to join the network (max 250 characters)",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
         },
-        
+        maxlength: 250,
         value: data['application-reasons']
         }) 
       }}

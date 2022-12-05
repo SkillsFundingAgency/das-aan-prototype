@@ -21,9 +21,32 @@
 
       <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-      <p class="govuk-body-m">Details from your application portal</p>
-      <p>If these are incorrect then please log in to your portal to change.</p>
+      <p class="govuk-body-m">Here are your existing details from your Apprenticeship account. If any of these details are incorrect, please log in to your account and update them.</p>
 
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Full name"
+            },
+            value: {
+              text: "Content which will be pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "Content which will be pulled from the apprentice portal displayed here"
+            }
+          }
+        ] 
+      })
+    }}
+ 
+    <p class="govuk-body-m">Here is the additional information you have provided in your application.</p>
 
 
       {{ govukSummaryList({
@@ -83,8 +106,28 @@
         ] 
       })
     }}
-    
-  
+
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
+      name: "line-manager",
+      classes: "base-margin-bottom",
+      fieldset: {
+        legend: {
+          text: "Please confirm:",
+          classes: "govuk-!-font-weight-bold"  
+        }
+      },
+      value: data[line-manager],
+      items: [
+        {
+          value: "I have told my line manager I am joining the AAN",
+          text: "I have told my line manager I am joining the AAN"
+        } 
+      ]
+      })
+    }}
+
 
       <h2 class="govuk-heading-m">Now send your application</h2>
 

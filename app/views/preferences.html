@@ -13,8 +13,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">How will you support the network?</h1>
-
       <form class="form" action="/engagement" method="post">
 
         {{ govukCheckboxes({
@@ -23,32 +21,18 @@
           hint: {
             text: "Select all that apply."
           },
+          fieldset: {
+            legend: {
+              text: "Please tell us which ways you can support the network",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
           
           items: [
-
-            {
-              value: "Online events",
-              text: "Online Event"
-            },
-            {
-              value: "In person events",
-              text: "In person Events"
-            },
-            {
-              value: "Hybrid events (available in person and online)",
-              text: "Hybrid Events"
-            },
             {
               value: "Case studies",
-              text: "Case Studies"
-            },
-            {
-              value: "Social media",
-              text: "Social Media"
-            },
-             {
-              value: "Resources and templates",
-              text: "Resources and templates"
+              text: "Case studies"
             },
             {
               value: "Communication",
@@ -59,12 +43,32 @@
               text: "Design"
             },
             {
+              value: "Hybrid events (available in person and online)",
+              text: "Hybrid events (available in person and online)"
+            },
+            {
+              value: "In person events",
+              text: "In person events"
+            },
+            {
+              value: "Online events",
+              text: "Online events"
+            },
+            {
               value: "Project management",
-              text: "Project Management"
+              text: "Project management"
+            },
+            {
+              value: "Resources and templates",
+              text: "Resources and templates"
+            },
+            {
+              value: "Social media",
+              text: "Social media"
             },
             {
               value: "Stakeholder engagement",
-              text: "Stakeholder Engagement"
+              text: "Stakeholder engagement"
             }
           ]
          
