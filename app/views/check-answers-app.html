@@ -52,6 +52,23 @@
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
+        {
+          key: {
+            text: "Regions you are active in"
+          },
+          value: {
+            text: data['region']
+          },
+          actions: {
+            items: [
+              {
+                href: "/region",
+                text: "Change",
+                visuallyHiddenText: "region"
+              }
+            ]
+          }
+        },
           {
             key: {
               text: "Reasons for applying"
@@ -62,7 +79,7 @@
             actions: {
               items: [
                 {
-                  href: "/aanApplication",
+                  href: "/outline-application",
                   text: "Change",
                   visuallyHiddenText: "application outline"
                 }
@@ -79,7 +96,7 @@
             actions: {
               items: [
                 {
-                  href: "/aanApplication",
+                  href: "/preferences",
                   text: "Change",
                   visuallyHiddenText: "Network preferences"
                 }
@@ -96,7 +113,7 @@
             actions: {
               items: [
                 {
-                  href: "/aanApplication",
+                  href: "/engagement",
                   text: "Change",
                   visuallyHiddenText: "Previous engagement"
                 }
@@ -118,11 +135,10 @@
           classes: "govuk-!-font-weight-bold"  
         }
       },
-      value: data[line-manager],
       items: [
         {
-          value: "I have told my line manager I am joining the AAN",
-          text: "I have told my line manager I am joining the AAN"
+          value: "I have approval from my line manager to join the network",
+          text: "I have approval from my line manager to join the network"
         } 
       ]
       })

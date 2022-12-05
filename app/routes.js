@@ -156,43 +156,13 @@ const networkSettings = [
 
 let regions = [
     {
-      value: "south-west",
-      text: "South West",
-      selected: false
-    },
-    {
-      value: "north-east",
-      text: "North East",
-      selected: false
-    },
-    {
-      value: "east-midlands",
-      text: "East Midlands",
-      selected: false
-    },
-    {
-      value: "north-west",
-      text: "North West",
-      selected: false
-    },
-    {
-        value: "south-east",
-        text: "South East",
-        selected: false
-    },
-    {
-        value: "west-midlands",
-        text: "West Midlands",
-        selected: false
-      },
-    {
         value: "east-of-england",
-        text: "East of England",
+        text: "East of england",
         selected: false
     },
     {
-        value: "yorkshire-and-humber",
-        text: "Yorkshire and Humber",
+        value: "east-midlands",
+        text: "East midlands",
         selected: false
     },
     {
@@ -200,6 +170,36 @@ let regions = [
         text: "London",
         selected: false
     },
+    {
+        value: "north-east",
+        text: "North east",
+        selected: false
+    },
+    {
+        value: "north-west",
+        text: "North west",
+        selected: false
+    },
+    {
+        value: "south-east",
+        text: "South east",
+        selected: false
+    },
+    {
+        value: "south-west",
+        text: "South west",
+        selected: false
+    },
+    {
+        value: "west-midlands",
+        text: "West midlands",
+        selected: false
+    },
+    {
+        value: "yorkshire-and-humber",
+        text: "Yorkshire and humber",
+        selected: false
+    }
   ]
 
 let industries = [
@@ -654,17 +654,16 @@ router.get('/aanApplication', (req, res) => {
     console.log(errors, "got query parameter")
 
     if (errors){
-        
+
     }
-
-
-
-
-
 
     res.render('aanApplication',  {regions, industrySelect} )
 })
 
+router.get('/region', (req, res) => {
+
+    res.render('region',  {regions} )
+})
 
 // event notifications page - to display list of cards
 

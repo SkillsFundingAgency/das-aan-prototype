@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/outline-application" method="post">
+
+        {{ govukCheckboxes({
+          name: 'region',
+          classes: "govuk-checkboxes--small filter-region",
+          fieldset: {
+            legend: {
+              text: "Please choose the regions you are active in as an apprentice",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+              text: "This can be the location of your employer. Select all that apply."
+          },
+          items: regions,
+          value: data['filter-region']
+        }) 
+        }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

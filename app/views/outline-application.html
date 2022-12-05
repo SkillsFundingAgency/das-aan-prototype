@@ -13,26 +13,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Outline why you want to join the network</h1>
-
       <form class="form" action="/preferences" method="post">
 
         {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-        {{ govukCharacterCount({
-        name: "with-hint",
-        id: "with-hint",
-        fieldset: {
-          legend: {
-            text: "Please outline why you want to join the network (max 250 characters)",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        maxlength: 250,
-        value: data['application-reasons']
-        }) 
-      }}
+        {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+          {{ govukCharacterCount({
+            name: "with-hint",
+            id: "with-hint",
+            maxlength: 250,
+            label: {
+              text: "Please outline why you want to join the network (max 250 characters)",
+              classes: "govuk-label--l",
+              isPageHeading: true
+            }
+          }) }}
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
