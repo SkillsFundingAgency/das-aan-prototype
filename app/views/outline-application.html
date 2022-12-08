@@ -19,14 +19,18 @@
 
         {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
           {{ govukCharacterCount({
-            name: "with-hint",
-            id: "with-hint",
-            maxlength: 250,
+            name: "word-count",
+            id: "word-count",
+            maxwords: 250,
+            hint: {
+              text: "This can include information such as what initially drew you to the network and what you would like to get out of the network."
+            },            
             label: {
-              text: "Please outline why you want to join the network (max 250 characters)",
+              text: "Why do you want to join the network?",
               classes: "govuk-label--l",
               isPageHeading: true
             }
+            
           }) }}
 
 

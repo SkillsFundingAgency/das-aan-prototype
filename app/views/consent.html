@@ -10,34 +10,48 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-l">
-    Terms and Conditions
-  </h1>
-  <p class="govuk-body-m">
-    By agreeing to use this service:
-  </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <ul class="govuk-body-m medium-margin-bottom indent">
+      <h1 class="govuk-heading-l">
+        Terms and Conditions
+      </h1>
 
-    <li class="base-margin-bottom">you agree to share the minimum profile information across the network including your name, email address and region.</li>
+      <p class="govuk-body-m">
+        By using this service, you agree to: 
+      </p>
+      
 
-      <li class="base-margin-bottom">this information will only be visible to other network members when they are searching or filtering the network directory.</li>
-      <li class="base-margin-bottom">other members will be able to see when you have signed up to an event.</li>
-      <li class="base-margin-bottom">sharing your email address with the network allows members to contact and network with each other.</li>
-      <li class="base-margin-bottom">you will adhere to the network's code of conduct and embody its values.</li>
-  </ul>
+      <ul class="govuk-body-m medium-margin-bottom indent">
+        <li class="base-margin-bottom">share your name, email address and the area of the country which you live in</li>
+        <li class="base-margin-bottom">adhere to the network’s <a href="#">code of conduct and values</a></li>
+      </ul>
 
-  <p class="gov-body-s medium-margin-bottom">
-    Once accepted into the network, you will be able to alter your information sharing preferences in your profile settings.
-  </p> 
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+        <p class="govuk-body-m">
+          Your agreement will allow us to:
+        </p>
 
-        {{ govukButton({
-          text: "Confirm and continue",
-          href: "/region"
-        }) 
-  }}
+      <ul class="govuk-body-m medium-margin-bottom indent">
+        <li class="base-margin-bottom">display your information to ambassadors searching within the network </li>
+        <li class="base-margin-bottom">show members your name, email address and the area you live in relation to the events you have signed up for </li>
+        <li class="base-margin-bottom">provide members with a way to contact and network with you</li>
+        <li class="base-margin-bottom">monitor ambassador activity to support and develop the network </li>
+      </ul>
 
+      <p class="gov-body-s medium-margin-bottom">
+          You can alter your information sharing preferences at any time within your profile settings. If your profile is set to private, network members will not be able to search and contact you.
+      </p> 
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+            {{ govukButton({
+              text: "Confirm and continue",
+              href: "/employer"
+            }) 
+      }}
+
+</div>
+</div>
 
 {% endblock %}

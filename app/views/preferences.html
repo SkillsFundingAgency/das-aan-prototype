@@ -13,62 +13,57 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">Please tell us which ways you can support the network</h1>
+
+      <p>Your preferences will help regional support teams find the most relevant opportunities available to you. Ambassadors are expected to participate in a minimum of six engagement activities/events across the year.</p>
+
       <form class="form" action="/engagement" method="post">
+
 
         {{ govukCheckboxes({
           name: "network-preferences",
           classes: "base-margin-bottom",
-          hint: {
-            text: "Select all that apply."
-          },
-          fieldset: {
-            legend: {
-              text: "Please tell us which ways you can support the network",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
           
           items: [
             {
               value: "Case studies",
-              text: "Case studies"
+              text: "Carrying out and writing up case studies"
             },
             {
               value: "Communication",
-              text: "Communication"
+              text: "Distributing communications to the network"
             },
             {
               value: "Design",
-              text: "Design"
+              text: "Designing and creating marketing materials to champion the network"
             },
             {
               value: "Hybrid events (available in person and online)",
-              text: "Hybrid events (available in person and online)"
+              text: "Presenting at hybrid events (in person and online)"
             },
             {
               value: "In person events",
-              text: "In person events"
+              text: "Presenting at events in person"
             },
             {
               value: "Online events",
-              text: "Online events"
+              text: "Presenting at online events"
             },
             {
               value: "Project management",
-              text: "Project management"
+              text: "Project management of regional events or playing a role in national events"
             },
             {
               value: "Resources and templates",
-              text: "Resources and templates"
+              text: "Utilising network resources and templates"
             },
             {
               value: "Social media",
-              text: "Social media"
+              text: "Promotional activity on social media channels"
             },
             {
               value: "Stakeholder engagement",
-              text: "Stakeholder engagement"
+              text: "Engaging with a range of stakeholders about how to improve the network "
             }
           ]
          

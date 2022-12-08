@@ -157,7 +157,7 @@ const networkSettings = [
 let regions = [
     {
         value: "east-of-england",
-        text: "East of england",
+        text: "East of England",
         selected: false
     },
     {

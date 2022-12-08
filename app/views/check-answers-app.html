@@ -19,87 +19,48 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-l">Check the information you have provided before submitting your application</h1>
 
-      <p class="govuk-body-m">Here are your existing details from your Apprenticeship account. If any of these details are incorrect, please log in to your account and update them.</p>
+      <h2 class="govuk-heading-m">Here are the details you have provided us</h2>
+
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
-          {
-            key: {
-              text: "Full name"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
+        {
+          key: {
+            text: "Current employer"
           },
-          {
-            key: {
-              text: "Email"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
+          value: {
+            text: "this will be included if end date of apprenticeship is before current year"
           },
-          {
-            key: {
-              text: "Organisation"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
-          },
-          {
-            key: {
-              text: "Organisation's postcode"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
-          },
-          {
-            key: {
-              text: "Start and end date of apprenticeship"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
-          },
-          {
-            key: {
-              text: "Apprenticeship sector"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
-          },
-          {
-            key: {
-              text: "Apprenticeship programme"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
-          },
-          {
-            key: {
-              text: "Apprenticeship level"
-            },
-            value: {
-              text: "Content pulled from the apprentice portal displayed here"
-            }
+          actions: {
+            items: [
+              {
+                href: "/employer",
+                text: "Change",
+                visuallyHiddenText: "employer"
+              }
+            ]
           }
-        ] 
-      })
-    }}
- 
-    <p class="govuk-body-m">Here is the additional information you have provided in your application.</p>
-
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
+        },
+        { 
+          key: {
+            text: "Current job title"
+          },
+          value: {
+            text: data['job-title']
+          },
+          actions: {
+            items: [
+              {
+                href: "/jobRole",
+                text: "Change",
+                visuallyHiddenText: "job title"
+              }
+            ]
+          }
+        },
         {
           key: {
             text: "Regions you are active in"
@@ -172,25 +133,99 @@
       })
     }}
 
-    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+    <h2 class="govuk-heading-m">Here are your existing details from your Apprenticeship account.</h2>
+      <p class="govuk-body-m">If any of these details are incorrect, please log in to your account and update them.</p>
 
-    {{ govukCheckboxes({
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Full name"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Employer"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Employer's postcode"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Start and end date of apprenticeship"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Apprenticeship sector"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Apprenticeship programme"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          },
+          {
+            key: {
+              text: "Apprenticeship level"
+            },
+            value: {
+              text: "Content pulled from the apprentice portal displayed here"
+            }
+          }
+        ] 
+      })
+    }}
+ 
+  
+    {{ govukRadios({
       name: "line-manager",
-      classes: "base-margin-bottom",
       fieldset: {
         legend: {
-          text: "Please confirm:",
-          classes: "govuk-!-font-weight-bold"  
+          text: "I have approval from my line manager to join the network"
         }
       },
       items: [
         {
-          value: "I have approval from my line manager to join the network",
-          text: "I have approval from my line manager to join the network"
-        } 
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
       ]
-      })
-    }}
+    }) }}
 
 
       <h2 class="govuk-heading-m">Now send your application</h2>

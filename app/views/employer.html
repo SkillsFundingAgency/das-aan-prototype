@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/jobRole" method="post">
+
+        <p>please note: this page will only appear if the end date on the apprentice database is before the current year.</p>
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "What is the name of your employer?",
+            classes: "govuk-label--l",
+            isPageHeading: true
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        
+
+        {{ govukInput({
+          label: {
+            text: "Please provide the postcode of your employer",
+            classes: "govuk-label--l"
+          },
+          classes: "govuk-input--width-5",
+          id: "width-5",
+          name: "width-5"
+        }) }}
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
