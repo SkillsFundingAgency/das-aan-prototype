@@ -12,9 +12,9 @@
   {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
 {{ govukPanel({
-    titleText: "Thank you for your application to join the network.",
-    html: "Network members play a vital role in championing apprenticeships across England.<br>
-    We will contact you via email within 24 hours to confirm your application and outline next steps."
+    titleText: "We have received your application and will contact you via email with next steps within 24 hours.",
+    html: "You can now continue to your ambassador hub, where you can learn more about the network and opportunities available to you.<br>
+    Thank you for your interest in joining the network, members play a vital role in championing apprenticeships across England."
 
     }) 
 }}
@@ -22,7 +22,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-    text: "Continue",
+    text: "Continue to ambassador hub",
     href: "/hubHome"
     }) }}
 
