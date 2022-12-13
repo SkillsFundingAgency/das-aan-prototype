@@ -15,60 +15,81 @@
 
       <h1 class="govuk-heading-l">Please tell us which areas interest you most in your role as an ambassador</h1>
 
-      <p>Your preferences will help regional support teams find the most relevant opportunities available to you. Ambassadors are expected to participate in a minimum of six engagement activities/events across the year.</p>
+      <p>Your areas of interest will help regional support teams find the most relevant opportunities available to you. Ambassadors are expected to participate in a minimum of six engagement activities/events across the year.</p>
 
       <form class="form" action="/engagement" method="post">
 
-
+        <h3 class="govuk-heading-m">Events</h3>
         {{ govukCheckboxes({
           name: "network-preferences",
           classes: "base-margin-bottom",
-          
+         
           items: [
+           
+            
+            
+           
+            
+         
+            
+            {
+              value: "Networking at events in person",
+              text: "Networking at events in person"
+            },
+            {
+              value: "Presenting at events in person",
+              text: "Presenting at events in person"
+            },
+            {
+              value: "Presenting at hybrid events (online and in person)",
+              text: "Presenting at hybrid events (online and in person)"
+            },
+            {
+              value: "Presenting at online events",
+              text: "Presenting at online events"
+            },
+            {
+              value: "Project management",
+              text: "Project management and delivery of regional events or playing a role in organising national events"
+            }
+          ]
+         
+        }) }}
+<br><br>
+        <h3 class="govuk-heading-m">Promotions</h3>
+        {{ govukCheckboxes({
+          name: "network-preferences",
+          classes: "base-margin-bottom",
+         
+          items: [
+           
+            
+          
+
             {
               value: "Case studies",
               text: "Carrying out and writing up case studies"
-            },
-            {
-              value: "Communication",
-              text: "Distributing communications to the network"
             },
             {
               value: "Design",
               text: "Designing and creating marketing materials to champion the network"
             },
             {
-              value: "Hybrid events (available in person and online)",
-              text: "Presenting at hybrid events (in person and online)"
-            },
-            {
-              value: "In person events",
-              text: "Presenting at events in person"
-            },
-            {
-              value: "Online events",
-              text: "Presenting at online events"
-            },
-            {
-              value: "Project management",
-              text: "Project management and delivery of regional events or playing a role in organising national events"
-            },
-            {
-              value: "Resources and templates",
-              text: "Utilising network resources and templates"
-            },
-            {
-              value: "Social media",
-              text: "Promotional activity on social media channels"
+              value: "Communication",
+              text: "Distributing communications to the network"
             },
             {
               value: "Stakeholder engagement",
-              text: "Engaging with a range of stakeholders about how to improve the network "
+              text: "Engaging with stakeholders to work out how to improve the network"
+            },
+            {
+              value: "Social media",
+              text: "Promotional the network on social media channels"
             }
           ]
          
         }) }}
-
+<br>
         <p>You can change your preferences at any time in your network profile settings.</p>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>

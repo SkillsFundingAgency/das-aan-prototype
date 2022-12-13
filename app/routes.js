@@ -156,48 +156,48 @@ const networkSettings = [
 
 let regions = [
     {
-        value: "east-of-england",
+        value: "East of England",
         text: "East of England",
         selected: false
     },
     {
-        value: "east-midlands",
+        value: "East midlands",
         text: "East midlands",
         selected: false
     },
     {
-        value: "london",
+        value: "London",
         text: "London",
         selected: false
     },
     {
-        value: "north-east",
+        value: "North east",
         text: "North east",
         selected: false
     },
     {
-        value: "north-west",
+        value: "North west",
         text: "North west",
         selected: false
     },
     {
-        value: "south-east",
+        value: "South east",
         text: "South east",
         selected: false
     },
     {
-        value: "south-west",
+        value: "South west",
         text: "South west",
         selected: false
     },
     {
-        value: "west-midlands",
+        value: "West midlands",
         text: "West midlands",
         selected: false
     },
     {
-        value: "yorkshire-and-humber",
-        text: "Yorkshire and humber",
+        value: "Yorkshire and The Humber",
+        text: "Yorkshire and The Humber",
         selected: false
     }
   ]
